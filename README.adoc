@@ -11,13 +11,14 @@ experimental: Try the Spring Boot Rest Service code inside your browser with ->
 :icons: font
 :source-highlighter: prettify
 
-Compatible to IntelliJ Idea Workspace.
-Java 8.x env ,Spring 4.x , Swagger 2.x , Aspect based logging, Annotation based Async Calls, Annotation based time delay
+Compatible to *IntelliJ Idea Workspace.
+Java 8.x env ,Spring 4.x , Swagger 2.x , Aspect based logging,* Annotation based Async Calls, Annotation based time delay
 
 Both Maven and Gradle usage.
 
+Import the Project through Intellij Idea Workspace and run the run_server.sh
+You are Set now. It runs the maven , Gradle and create boostrap jar.
 
-This guide walks you through the process of creating a "hello world" link:/understanding/REST[RESTful web service] with Spring.
 
 == What you'll build
 
@@ -169,27 +170,43 @@ Notice also how the `id` attribute has changed from `1` to `2`. This proves that
 
 Congratulations! You've just developed a RESTful web service with Spring. 
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
 
 
-1 . Interceptors
+1 .Interceptors
+
 2. AysncCalls to Rest Services
+
 3. ErrorHandling
+
 4. Loggine with Elapsed time Usage -http://aspects.jcabi.com/
+
 5. JDBC Calls with multi result set handling
+
 6. Unit Test Cases
+
 7. Traceouts.
 
 
 Top Annotations.
-@Async
+
+*@Async
+
 @Cacheable
+
 @Immutable
+
 @LogExceptions
+
 @Loggable
+
 @Quietly
+
 @Parallel
+
 @RetryOnFailure
+
 @ScheduleWithFixedDelay
+
 @Timeable
-@UnitedThrow
+
+@UnitedThrow*
