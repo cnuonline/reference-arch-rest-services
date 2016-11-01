@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'reference-arch-rest-service'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+configurations {
+    aspectjweaver
+    all*.exclude module : 'spring-boot-starter-logging'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-log4j2")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("io.springfox:springfox-swagger-ui:2.2.2")
+    compile("io.springfox:springfox-swagger2:2.2.2")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.jayway.jsonpath:json-path')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('com.jcabi:jcabi-aspects:0.22.5')
+    compile('org.aspectj:aspectjrt:1.8.9')
+    compile('org.codehaus.janino:janino:2.7.8')
+   // compile group: 'com.jcabi', name: 'jcabi-maven-plugin', version: '0.12'
+    aspectjweaver "org.aspectj:aspectjweaver:1.8.1"
+    runtime configurations.aspectjweaver.dependencies
+
+
+}
+
+// enables native aspectj
+//applicationDefaultJvmArgs = [
+//        "-javaagent:${configurations.aspectjweaver.asPath}"
+//]

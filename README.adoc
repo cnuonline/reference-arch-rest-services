@@ -1,7 +1,7 @@
 ---
 tags: [rest]
 projects: [spring-framework]
-experimental: Try the code inside your browser with -> http://beta.codenvy.com/f?id=9fq0busbm3tz7i8c
+experimental: Try the Spring Boot Rest Service code inside your browser with ->
 ---
 :spring_version: current
 :toc:
@@ -10,6 +10,12 @@ experimental: Try the code inside your browser with -> http://beta.codenvy.com/f
 :spring_boot_version: 1.4.1.RELEASE
 :icons: font
 :source-highlighter: prettify
+
+Compatible to IntelliJ Idea Workspace.
+Java 8.x env ,Spring 4.x , Swagger 2.x , Aspect based logging, Annotation based Async Calls, Annotation based time delay
+
+Both Maven and Gradle usage.
+
 
 This guide walks you through the process of creating a "hello world" link:/understanding/REST[RESTful web service] with Spring.
 
@@ -164,3 +170,26 @@ Notice also how the `id` attribute has changed from `1` to `2`. This proves that
 Congratulations! You've just developed a RESTful web service with Spring. 
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+
+
+1 . Interceptors
+2. AysncCalls to Rest Services
+3. ErrorHandling
+4. Loggine with Elapsed time Usage -http://aspects.jcabi.com/
+5. JDBC Calls with multi result set handling
+6. Unit Test Cases
+7. Traceouts.
+
+
+Top Annotations.
+@Async
+@Cacheable
+@Immutable
+@LogExceptions
+@Loggable
+@Quietly
+@Parallel
+@RetryOnFailure
+@ScheduleWithFixedDelay
+@Timeable
+@UnitedThrow
