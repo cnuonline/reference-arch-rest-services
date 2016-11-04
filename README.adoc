@@ -1,7 +1,7 @@
 ---
 tags: [rest]
 projects: [spring-framework]
-experimental: Try the Spring Boot Rest Service code inside your browser with ->
+experimental: Try the Spring Boot Rest Service code (Monolithic)  inside your browser with ->
 ---
 :spring_version: current
 :toc:
@@ -22,13 +22,14 @@ You are Set now. It runs the maven , Gradle and create boostrap jar.
 
 == What you'll build
 
-You'll build a service that will accept HTTP GET requests at:
+
+You'll build a service and run the run_server.sh .This will accept HTTP GET requests at:
 
 ----
 http://localhost:8080/greeting
 ----
 
-and respond with a link:/understanding/JSON[JSON] representation of a greeting:
+and respond with a JSON representation of a greeting:
 
 [source,json]
 ----
@@ -47,21 +48,6 @@ The `name` parameter value overrides the default value of "World" and is reflect
 ----
 {"id":1,"content":"Hello, User!"}
 ----
-
-
-== What you'll need
-
-:java_version: 1.8
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
-
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
-
-
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/hide-show-gradle.adoc[]
-
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/hide-show-maven.adoc[]
-
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/hide-show-sts.adoc[]
 
 
 
@@ -135,12 +121,6 @@ Although it is possible to package this service as a traditional link:/understan
 include::complete/src/main/java/hello/Application.java[]
 ----
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/spring-boot-application.adoc[]
-
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/build_an_executable_jar_subhead.adoc[]
-
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/build_an_executable_jar_with_both.adoc[]
-
 
 Logging output is displayed. The service should be up and running within a few seconds.
 
@@ -178,13 +158,23 @@ Congratulations! You've just developed a RESTful web service with Spring.
 
 3. ErrorHandling
 
-4. Loggine with Elapsed time Usage -http://aspects.jcabi.com/
+4. Logging with Elapsed time Usage -http://aspects.jcabi.com/
 
 5. JDBC Calls with multi result set handling
 
 6. Unit Test Cases
 
 7. Traceouts.
+
+8. Logging is controlled through Spring Profile
+
+9. Interceptors
+
+10. JDBC - SQL connectors - Complex MultiResultSet usecase
+
+11. No SQL Connector (MongoDB, Redis Connector)
+
+12. Profiling and quick Perform test.
 
 
 Top Annotations.
@@ -210,3 +200,17 @@ Top Annotations.
 @Timeable
 
 @UnitedThrow*
+
+== Credits to
+
+1. JSON
+
+2. http://docs.spring.io/spring/docs/4.3.3.RELEASE/
+
+3. http://aspects.jcabi.com/
+
+4. Spring Security
+
+5. Spring Aspect
+
+6.
