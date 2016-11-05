@@ -8,12 +8,23 @@
         <logger name="com.jcabi.log" level="DEBUG" additivity="false">
             <appender-ref ref="CONSOLE"/>
         </logger>
+        <logger name="org.springframework" level="WARN" />
+        <logger name="org.springframework.transaction" level="WARN" />
+
+        <!-- in order to debug some marshalling issues, this needs to be TRACE -->
+        <logger name="org.springframework.web.servlet.mvc" level="WARN" />
 
     </springProfile>
     <springProfile name="production">
         <logger name="org.springframework.controllers" level="WARN" additivity="false">
             <appender-ref ref="FILE" />
         </logger>
+        <logger name="org.springframework" level="WARN" />
+        <logger name="org.springframework.transaction" level="WARN" />
+
+        <!-- in order to debug some marshalling issues, this needs to be TRACE -->
+        <logger name="org.springframework.web.servlet.mvc" level="WARN" />
+
     </springProfile>
     <if condition='property("spring.profiles.active").contains("dev")'>
         <then>
@@ -23,6 +34,12 @@
             <logger name="com.jcabi.log" level="DEBUG" additivity="false">
                 <appender-ref ref="CONSOLE"/>
             </logger>
+            <logger name="org.springframework" level="WARN" />
+            <logger name="org.springframework.transaction" level="WARN" />
+
+            <!-- in order to debug some marshalling issues, this needs to be TRACE -->
+            <logger name="org.springframework.web.servlet.mvc" level="WARN" />
+
         </then>
         <else>
             <logger name="org.springframework.controllers" level="WARN" additivity="false">
@@ -31,6 +48,12 @@
             <logger name="com.jcabi.log" level="DEBUG" additivity="false">
                 <appender-ref ref="CONSOLE"/>
             </logger>
+            <logger name="org.springframework" level="WARN" />
+            <logger name="org.springframework.transaction" level="WARN" />
+
+            <!-- in order to debug some marshalling issues, this needs to be TRACE -->
+            <logger name="org.springframework.web.servlet.mvc" level="WARN" />
+
         </else>
     </if>
 </configuration>

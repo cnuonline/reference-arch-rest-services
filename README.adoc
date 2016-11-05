@@ -112,14 +112,11 @@ The `Greeting` object must be converted to JSON. Thanks to Spring's HTTP message
 
 == Make the application executable
 
-Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+Although it is possible to package this service as a traditional WAR file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
 
 
-`src/main/java/hello/Application.java`
-[source,java]
-----
-include::complete/src/main/java/hello/Application.java[]
-----
+/src/main/java/com/arch/api/restful/boot/Application.java
+
 
 
 Logging output is displayed. The service should be up and running within a few seconds.
@@ -150,6 +147,36 @@ Notice also how the `id` attribute has changed from `1` to `2`. This proves that
 
 Congratulations! You've just developed a RESTful web service with Spring. 
 
+== Lets do more by adding MongoDB.
+NOTE: MongoDB stores data in collections. Spring Data MongoDB will map the class `Customer` into a collection called _customer_. If you want to change the name of the collection, you can use Spring Data MongoDB's http://docs.spring.io/spring-data/data-mongodb/docs/current/api/org/springframework/data/mongodb/core/mapping/Document.html[`@Document`] annotation on the class.
+
+
+== Create simple queries
+Spring Data MongoDB focuses on storing data in MongoDB. It also inherits functionality from the Spring Data Commons project, such as the ability to derive queries. Essentially, you don't have to learn the query language of MongoDB; you can simply write a handful of methods and the queries are written for you.
+
+
+To see how this works, create a repository interface that queries `Customer` documents.
+
+`src/main/java/com/arch/api/restful/boot/CustomerMongoRepository.java`
+[source,java]
+----
+include::complete/src/main/java/com/arch/api/restful/boot/CustomerMongoRepository.java[]
+----
+
+`CustomerMongoRepository` extends the `MongoRepository` interface and plugs in the type of values and id it works with: `Customer` and `String`. Out-of-the-box, this interface comes with many operations, including standard CRUD operations (create-read-update-delete).
+
+You can define other queries as needed by simply declaring their method signature. In this case, you add `findByFirstName`, which essentially seeks documents of type `Customer` and finds the one that matches on `firstName`.
+
+You also have `findByLastName` to find a list of people by last name.
+
+In a typical Java application, you write a class that implements `CustomerRepository` and craft the queries yourself. What makes Spring Data MongoDB so useful is the fact that you don't have to create this implementation. Spring Data MongoDB creates it on the fly when you run the application.
+
+You Also have GridFS template for file upload and download. Please go through the steps of GridFSIntegrationTest.java
+Let's wire this up and see what it looks like!
+
+
+
+
 
 
 1 .Interceptors
@@ -172,7 +199,7 @@ Congratulations! You've just developed a RESTful web service with Spring.
 
 10. JDBC - SQL connectors - Complex MultiResultSet usecase
 
-11. No SQL Connector (MongoDB, Redis Connector)
+11. No SQL Connector (MongoDB, Grid FS , Redis Connector)
 
 12. Profiling and quick Perform test.
 

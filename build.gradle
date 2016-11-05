@@ -23,6 +23,7 @@ repositories {
 configurations {
     aspectjweaver
     all*.exclude module : 'spring-boot-starter-logging'
+    //all*.exclude module: 'spring-data-mongodb:1.7.1.RELEASE'
 }
 
 sourceCompatibility = 1.8
@@ -43,6 +44,15 @@ dependencies {
    // compile group: 'com.jcabi', name: 'jcabi-maven-plugin', version: '0.12'
     aspectjweaver "org.aspectj:aspectjweaver:1.8.1"
     runtime configurations.aspectjweaver.dependencies
+    //Mongodb . If you are not using mongodb, comment the below line
+   // compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile("org.springframework.data:spring-data-mongodb:1.9.3.RELEASE")
+    compile group: 'com.querydsl', name: 'querydsl-apt', version: '4.0.4'
+    compile("com.mysema.querydsl:querydsl-mongodb:3.6.6")
+    compile("com.mysema.querydsl:querydsl-apt:3.6.6")
+    //end of Mongo dependency
+
+  /*  compile("org.springframework.data:spring-data-commons-core:1.4.1.RELEASE")*/
 
 
 }

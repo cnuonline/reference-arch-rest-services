@@ -1,10 +1,12 @@
 package com.arch.api.restful.boot;
+import com.arch.api.restful.boot.db.repositories.CustomerMongoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.ImportResource;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -13,10 +15,12 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@ComponentScan({"com.arch.api.restful.boot","com.jcabi"})
+@ComponentScan({"com.arch.api.restful.boot","com.jcabi","com.arch.api.restful.config"})
 @EnableSwagger2
 @EnableAspectJAutoProxy
+@EnableAutoConfiguration
 //@ImportResource( { "classpath:logback-spring.xml" } )
+//@ImportResource( { "classpath:mongo_config.xml" } )
 public class Application {
 
     public static void main(String[] args) {
@@ -24,6 +28,9 @@ public class Application {
 
 
     }
+
+    @Autowired
+    private CustomerMongoRepository repository;
 
     @Bean
     public Docket newsApi() {
