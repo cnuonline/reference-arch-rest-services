@@ -4,7 +4,7 @@ package com.arch.api.restful.boot.db.converter;
  * Created by SRINIVASULU on 05/11/16.
  */
 
-import com.arch.api.restful.boot.db.Customer;
+import com.arch.api.restful.boot.beans.Customer;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +21,7 @@ public class CustomerConverter implements Converter<Customer, DBObject> {
     public DBObject convert(final Customer user) {
 
         final DBObject dbObject = new BasicDBObject();
+       /*
         dbObject.put("name", user.getName());
         dbObject.put("age", user.getAge());
         if (user.getEmailAddress() != null) {
@@ -28,7 +29,7 @@ public class CustomerConverter implements Converter<Customer, DBObject> {
             emailDbObject.put("value", user.getEmailAddress().getValue());
             dbObject.put("email", emailDbObject);
         }
-        dbObject.removeField("_class");
+        dbObject.removeField("_class");*/
         return dbObject;
     }
 

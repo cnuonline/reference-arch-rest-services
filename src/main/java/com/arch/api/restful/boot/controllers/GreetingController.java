@@ -42,7 +42,7 @@ public class GreetingController {
                 String.format(template, name));
     }
 
-    @Loggable(value = Loggable.ERROR, name = "ValidationInfo method")
+    @Loggable(value = Loggable.WARN, name = "ValidationInfo method")
     private void validateInfo(String name) {
         System.out.println("Validation verify");
     }

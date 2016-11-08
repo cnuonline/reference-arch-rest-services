@@ -1,0 +1,10 @@
+1. Create, Update , Verify , Suspend User.
+2. Track User status
+3. Login
+4. Verify OTP
+6. Upload Invoice, View Invoices, Import Invoices-Service Bill, Vendors Download GSTR2A
+7. SendUpdates to Customers for Verify and Accept the Invoices,
+8. Reconcile the Invoices ( Accept & Reject is done , dispute status)
+9. File the Submission (Final Monthly Return GSTR3)
+10. Generate Challan
+11. View payments from Challan.

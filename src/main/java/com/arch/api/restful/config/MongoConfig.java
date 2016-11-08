@@ -61,7 +61,7 @@ public class MongoConfig extends AbstractMongoConfiguration {
     @Override
     public CustomConversions customConversions() {
         List<Converter<?, ?>> converterList = new ArrayList<>();
-        converterList.add(new CustomerConverter());
+       // converterList.add(new CustomerConverter());
        // converterList.add(new MongoColorReader());
         return new CustomConversions(converterList);
     }
