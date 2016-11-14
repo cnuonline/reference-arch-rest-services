@@ -1,7 +1,7 @@
 ---
-tags: [rest]
+tags: [Java Rest]
 projects: [spring-framework]
-experimental: Try the Spring Boot Rest Service code (Monolithic)  inside your browser with ->
+experimental: Try the Spring Boot Rest Service code (Monolithic)  inside your browser . Smart Coding and Minimize the lines of code.
 ---
 :spring_version: current
 :toc:
